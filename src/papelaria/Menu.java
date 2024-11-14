@@ -50,18 +50,23 @@ public class Menu {
 				case 2:
 					System.out.print("Digite o ID do produto: ");
 					int idProduto = leia.nextInt();
-					ProdutoPapelaria produto = controller.selecionarProduto(idProduto);
-					if(produto != null) {
-						controller.adicionarNoCarrinho(produto);
-						System.out.println("Adicionar ao carrinho " + produto.getNome() + "com sucesso! \n\n");
-					} else {
-						System.out.println("Produto não encontrado");
+					try {
+						ProdutoPapelaria produto = controller.selecionarProduto(idProduto);
+						if(produto != null) {
+							controller.adicionarNoCarrinho(produto);
+							System.out.println("Adicionar ao carrinho " + produto.getNome() + "com sucesso! \n\n");
+						} else {
+							System.out.println("Produto não encontrado");
+						}
+					} catch(Exception e) {
+						System.out.println("Erro inesperado, tente novamente");
 					}
 					
 					break;
 				case 3:
-					controller.exibirCarrinho();
 					System.out.println("Verificar o carrinho\n\n");
+					controller.exibirCarrinho();
+					
 
 					break;
 				case 4:

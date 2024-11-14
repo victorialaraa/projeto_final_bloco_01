@@ -55,9 +55,9 @@ public class PapelariaController implements PapelariaRepository {
 		}
 	}
 
+	
 	@Override
 	public void exibirTodosProdutos() {
-
 		lista.stream().forEach(item -> System.out
 				.println("ID: " + item.getId() + " - Produto: " + item.getNome() + " - Preço " + item.getPreco()));
 	}
