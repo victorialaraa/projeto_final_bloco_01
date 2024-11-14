@@ -8,8 +8,10 @@ import papelaria.model.ProdutoPapelaria;
 public interface PapelariaRepository {
 
 	public void exibirCarrinho(); 
+	public void carrgarProdutos(); 
 	public void adicionarNoCarrinho(Produto produto);
 	public void exibirTotal(); 
 	public void finalizarPagamento();
-	public List<ProdutoPapelaria> listaProdutos();
+	public void exibirTodosProdutos();
+	public ProdutoPapelaria selecionarProduto(int id);
 }

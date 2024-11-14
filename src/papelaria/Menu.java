@@ -14,7 +14,7 @@ public class Menu {
 
 		int opcao;
 		boolean isEnabled = true;
-
+		controller.carrgarProdutos();
 		while (isEnabled) {
 
 			System.out.println("*****************************************************");
@@ -44,17 +44,23 @@ public class Menu {
 			switch (opcao) {
 				case 1:
 					System.out.println("Exibir produtos\n\n");
-					controller.exibirCarrinho();
+					controller.exibirTodosProdutos();
 
 					break;
 				case 2:
-					Produto produto = new ProdutoPapelaria(1, "Apostila X", 29.90, "Papel Reciclavel");
-					controller.adicionarNoCarrinho(produto);
-					System.out.println("Adicionar ao carrinho\n\n");
-
+					System.out.print("Digite o ID do produto: ");
+					int idProduto = leia.nextInt();
+					ProdutoPapelaria produto = controller.selecionarProduto(idProduto);
+					if(produto != null) {
+						controller.adicionarNoCarrinho(produto);
+						System.out.println("Adicionar ao carrinho " + produto.getNome() + "com sucesso! \n\n");
+					} else {
+						System.out.println("Produto não encontrado");
+					}
+					
 					break;
 				case 3:
-					controller.exibirTotal();
+					controller.exibirCarrinho();
 					System.out.println("Verificar o carrinho\n\n");
 
 					break;
