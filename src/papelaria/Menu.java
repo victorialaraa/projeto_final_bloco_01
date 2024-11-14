@@ -1,12 +1,16 @@
 package papelaria;
 
 import java.util.Scanner;
-import papelaria.model.Produto;
 
-public class Menu {
+import papelaria.contoller.PapelariaController;
+import papelaria.model.Produto;
+import papelaria.model.ProdutoPapelaria;
+
+public class Menu {	
 
 	public static void main(String[] args) {
 		Scanner leia = new Scanner(System.in);
+		PapelariaController controller = new PapelariaController();
 
 		int opcao;
 
@@ -39,9 +43,12 @@ public class Menu {
 			switch (opcao) {
 				case 1:
 					System.out.println("Exibir produtos\n\n");
+					controller.exibirCarrinho();
 
 					break;
 				case 2:
+					Produto produto = new ProdutoPapelaria(1, "Apostila X", 29.90, "Papel Reciclavel");
+					controller.adicionarNoCarrinho(produto);
 					System.out.println("Adicionar ao carrinho\n\n");
 
 					break;
