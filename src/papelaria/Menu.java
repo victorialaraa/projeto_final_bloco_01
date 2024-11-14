@@ -19,10 +19,9 @@ public class Menu {
 			System.out.println("                                                     ");
 			System.out.println("            1 - Exibir produtos                      ");
 			System.out.println("            2 - Adicionar ao carrinho                ");
-			System.out.println("            3 - Verificar o carrinho                 ");
-			System.out.println("            4 - Remover do carrinho                  ");			
-			System.out.println("            5 - Finalizar o pagamento                ");
-			System.out.println("            6 - Sair                                 ");
+			System.out.println("            3 - Verificar o carrinho                 ");			
+			System.out.println("            4 - Finalizar o pagamento                ");
+			System.out.println("            5 - Sair                                 ");
 			System.out.println("                                                     ");
 			System.out.println("*****************************************************");
 			System.out.println("Entre com a opção desejada:                          ");
@@ -30,7 +29,7 @@ public class Menu {
 
 			opcao = leia.nextInt();
 
-			if (opcao == 6) {
+			if (opcao == 5) {
 				sobre();
                  leia.close();
 				System.exit(0);
@@ -50,10 +49,6 @@ public class Menu {
 
 					break;
 				case 4:
-					System.out.println("Remover do carrinho \n\n");
-
-					break;
-				case 5:
 					System.out.println("Finalizar o pagamento\n\n");
 
 					break;
