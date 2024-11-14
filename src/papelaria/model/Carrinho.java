@@ -26,15 +26,6 @@ public class Carrinho {
         itens.add(new ProdutoPapelaria(3, "Lápis Grafite", 1.20, "Lápis"));
 	}
 	
-	public double getTotal() {
-		double total = 0;
-		
-		for (Produto produto : itens) {
-			produto.exibirDetalhes();
-			total += produto.getPreco();
-		}
-		return total;
-	}
     
 //	public void adicionarProduto (Produto produto) {
 //		itens.add(produto);

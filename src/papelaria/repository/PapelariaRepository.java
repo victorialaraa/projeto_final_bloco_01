@@ -6,4 +6,5 @@ public interface PapelariaRepository {
 
 	public void exibirCarrinho(); 
 	public void adicionarNoCarrinho(Produto produto);
+	public void exibirTotal(); 
 }

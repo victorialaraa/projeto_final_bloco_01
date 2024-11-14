@@ -25,4 +25,17 @@ public class PapelariaController implements PapelariaRepository {
 		carrinho.adicionarProduto(produto);
 	}
 
+	@Override
+	public void exibirTotal() {
+		double total = 0;
+		
+		for (Produto produto : carrinho.getList()) {
+			produto.exibirDetalhes();
+			total += produto.getPreco();
+		}
+		
+		System.out.println("Total: R$" + total);
+		
+	}
+
 }
