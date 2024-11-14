@@ -1,6 +1,7 @@
 package papelaria;
 
 import java.util.Scanner;
+import papelaria.model.Produto;
 
 public class Menu {
 
