@@ -13,8 +13,9 @@ public class Menu {
 		PapelariaController controller = new PapelariaController();
 
 		int opcao;
+		boolean isEnabled = true;
 
-		while (true) {
+		while (isEnabled) {
 
 			System.out.println("*****************************************************");
 			System.out.println("                                                     ");
@@ -53,12 +54,17 @@ public class Menu {
 
 					break;
 				case 3:
+					controller.exibirTotal();
 					System.out.println("Verificar o carrinho\n\n");
 
 					break;
 				case 4:
 					System.out.println("Finalizar o pagamento\n\n");
-
+					controller.finalizarPagamento();
+					isEnabled = false;
+					
+				case 5:
+					System.out.println("Obrigado e até a proxima!!!");
 					break;
 					
 				default:
